@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'cards/index'
+  get 'cards/show'
+  get 'genre/index'
+  get 'genre/show'
   root to: 'home#index'
   resources :genre, only: :index
   resources :words, only: :index
