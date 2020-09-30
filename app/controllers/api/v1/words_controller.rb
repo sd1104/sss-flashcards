@@ -6,8 +6,8 @@ class Api::V1::WordsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :render_status_404
 
   def index
-    card = Card.all
-    render json: words
+    cards = Card.all
+    render json: cards
   end
 
   private
