@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'genre/show'
   root to: 'home#index'
   resources :genre, only: :show
-  resources :cards, only: :show
+  resources :cards, only: [:new, :create, :show]
   namespace :api do
     namespace :v1 do
       resources :words, only: :index
