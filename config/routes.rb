@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+  get 'cards/index'
+  get 'cards/show'
+  get 'genre/index'
+  get 'genre/show'
   root to: 'home#index'
-  resources :genre, only: :index
-  resources :words, only: :index
+  resources :genre, only: :show
+  resources :cards, only: :show
   namespace :api do
     namespace :v1 do
       resources :words, only: :index
