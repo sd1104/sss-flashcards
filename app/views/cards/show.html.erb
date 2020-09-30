@@ -1,2 +1,20 @@
-<h1>Cards#show</h1>
-<p>Find me in app/views/cards/show.html.erb</p>
+<div class="container">
+  <div class="Genre">
+    <br><br>
+    <h4>詳細</h4>
+    <br>
+    <div class="card">
+      <div class="card-word">
+        単語：
+        <%= @card.word %>
+      </div>
+      <br>
+      <div class="card-explanation">
+        解説：
+        <%= @card.explanation %>
+      </div>
+    </div>
+    <br>
+    <%= link_to 'back', genre_path(@card.genre_id) %>
+  </div>
+</div>
