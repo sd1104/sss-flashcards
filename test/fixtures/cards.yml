@@ -2,8 +2,8 @@
 
 one:
   word: MyString
-  explanation: MyString
+  explanation: MyText
 
 two:
   word: MyString
-  explanation: MyString
+  explanation: MyText

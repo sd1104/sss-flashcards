@@ -1,2 +1,14 @@
-<h1>Words#index</h1>
-<p>Find me in app/views/words/index.html.erb</p>
+<%# <div class="contailer">
+  <h2>Word List</h2>
+  <div class="word-wrap">
+    <ul class="word-lists">
+      <% @words.each do |w| %>
+        <li class="word">
+          <%= link_to word_path(w) do %>
+            <%= w.word %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div> %>
