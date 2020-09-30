@@ -3,29 +3,37 @@
     <br><br>
     <h4>単語登録</h4>
     <br>
-    <%= form_for @cards, url: cards_path do |form| %>
-      <% @cards.collection.each do |card| %>
-        <%= fields_for 'card[]', card do |f| %>
-          <div class="fields">
-            <div class="field">
-              <%= f.label :ジャンル, class:"label" %>
-              <%= f.collection_select :genre_id, Genre.all, :id, :name, { include_blank: true} %>
+    <%= link_to 'back', root_path %>
+    <br><br>
+    <br>
+    <div class="wrap">
+      <%= form_for @cards, url: cards_path do |form| %>
+        <% @cards.collection.each do |card| %>
+          <%= fields_for 'card[]', card do |f| %>
+            <div class="fields">
+              <div class="field">
+                <%= f.label :ジャンル, class:"label" %>
+                <%= f.collection_select :genre_id, Genre.all, :id, :name, { include_blank: true}, class: "input" %>
+              </div>
+              <div class="field">
+                <%= f.label :単語, class:"label" %>
+                <%= f.text_field :word, class: "input" %>
+              </div>
+              <div class="field">
+                <%= f.label :解説, class:"label" %>
+                <%= f.text_area :explanation, class: "input" %>
+              </div>
             </div>
-            <div class="field">
-              <%= f.label :単語, class:"label" %>
-              <%= f.text_field :word %>
-            </div>
-            <div class="field">
-              <%= f.label :解説, class:"label" %>
-              <%= f.text_area :explanation %>
-            </div>
-          </div>
+          <% end %>
         <% end %>
+        <div class="action">
+          <%= form.submit '登録',class:"btn-secondary" %>
+        </div>
       <% end %>
-      <div class="action">
-        <%= form.submit '登録',class:"submit-btn" %>
-      </div>
-    <% end %>
+    </div>
+
     <br><br>
   </div>
+  <%= link_to 'back', root_path %>
+  <br><br>
 </div>
