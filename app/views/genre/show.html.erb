@@ -5,15 +5,36 @@
     <br>
     <%= link_to 'back', root_path %>
     <br><br>
-    <ul class="Genre-lists">
-      <% @genre.cards.each do |g| %>
-        <li class="list">
-          <%= link_to card_path(g) do %>
-            <%= g.word %>
-          <% end %>
-        </li>
-      <% end %>
-    </ul>
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th>No</th>
+          <th>単語</th>
+          <th>Good</th>
+          <th>Bad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @genre.cards.each_with_index do |g, index| %>
+          <tr>
+            <th scope="row">
+              <%= index + 1 %>
+            </th>
+            <td>
+              <%= link_to card_path(g) do %>
+                <%= g.word %>
+              <% end %>
+            </td>
+            <td>
+              <input type="checkbox">
+            </td>
+            <td>
+              <input type="checkbox">
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
   <br>
   <%= link_to 'back', root_path %>
