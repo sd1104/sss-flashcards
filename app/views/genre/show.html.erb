@@ -1,13 +1,13 @@
 <div class="container">
   <div class="Genre">
     <br><br>
-    <h4>ジャンル　一覧</h4>
+    <h4>詳細</h4>
     <br>
     <ul class="Genre-lists">
-      <% @genres.each do |g| %>
+      <% @genre.cards.each do |g| %>
         <li class="list">
-          <%= link_to genre_path(g) do %>
-            <%= g.name %>
+          <%= link_to card_path(g) do %>
+            <%= g.word %>
           <% end %>
         </li>
       <% end %>
