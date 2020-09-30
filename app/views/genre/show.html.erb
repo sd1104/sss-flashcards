@@ -3,6 +3,8 @@
     <br><br>
     <h4>詳細</h4>
     <br>
+    <%= link_to 'back', root_path %>
+    <br><br>
     <ul class="Genre-lists">
       <% @genre.cards.each do |g| %>
         <li class="list">
@@ -13,4 +15,6 @@
       <% end %>
     </ul>
   </div>
+  <br>
+  <%= link_to 'back', root_path %>
 </div>
