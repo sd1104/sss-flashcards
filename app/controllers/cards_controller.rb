@@ -19,6 +19,11 @@ class CardsController < ApplicationController
 
   private
   def cards_params
-    params.require(:cards)
+    params.require(:card)
   end
+
+  def room_params
+    params.require(:card).permit(:name, :explanation).merge(genre_id: 1)
+  end
+
 end
