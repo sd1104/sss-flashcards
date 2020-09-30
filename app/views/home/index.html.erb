@@ -3,15 +3,16 @@
     <br><br>
     <h3>sss-FlashCards</h3>
     <hr>
-    <h4>単語登録</h4>
-    <%= link_to 'コチラ', new_card_path %>
     <br><br>
-    <h4>ジャンル　一覧</h4>
+    <h4>単語登録</h4>
     <br>
+    <%= link_to 'コチラ', new_card_path, class: 'card-link' %>
+    <br><br><br>
+    <h4>ジャンル　一覧</h4>
     <ul class="Genre-lists">
       <% @genres.each do |g| %>
         <li class="list">
-          <%= link_to genre_path(g) do %>
+          <%= link_to genre_path(g), class: "badge badge-warning" do %>
             <%= g.name %>
           <% end %>
         </li>
